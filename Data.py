@@ -23,6 +23,7 @@ def remove_backslash(data):
     print(list(data.items())[:50])
     return data
 
+
 def clean_duplicates(data):
     # Iterate through the original dictionary
     for word, pronunciations in data.items():
