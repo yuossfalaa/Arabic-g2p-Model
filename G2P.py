@@ -1,5 +1,4 @@
 from pathlib import Path
-from gruut import sentences
 
 import torch
 from tokenizers import Tokenizer
@@ -80,8 +79,5 @@ def Arabic_G2P(sentence: str):
 
 
 if __name__ == "__main__":
-    print(Arabic_G2P('إيمان عيّاد أهلا بكم في هذه الحلقة من الواقع العربي التي نسلط خلالها الضوء على تجنيد الأطفال في القتال الدائر في كل من سوريا واليمن'))
-    for sent in sentences('إيمان عيّاد أهلا بكم في هذه الحلقة من الواقع العربي التي نسلط خلالها الضوء على تجنيد الأطفال في القتال الدائر في كل من سوريا واليمن', lang='ar'):
-       for word in sent:
-           if word.phonemes:
-               print(word.text, *word.phonemes)
+    print(Arabic_G2P(''))
+
