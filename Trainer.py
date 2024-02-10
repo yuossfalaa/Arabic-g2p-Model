@@ -1,3 +1,5 @@
+from torch.optim.lr_scheduler import ReduceLROnPlateau
+
 from Model import build_transformer
 from config import get_config, get_weights_file_path, latest_weights_file_path
 from Tokenizer import get_dataset
@@ -27,7 +29,8 @@ def train_model(config):
 
     writer = SummaryWriter(config["experiment_name"])
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"], eps=1e-9)
+    optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"], eps=1e-9,weight_decay= 5e-5)
+    scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.2, patience=50, verbose=True)
 
     # If the user specified a model to preload before training, load it
     initial_epoch = 0
@@ -75,7 +78,7 @@ def train_model(config):
 
             # Backpropagate the loss
             loss.backward()
-
+            scheduler.step(epoch)
             # Update the weights
             optimizer.step()
             optimizer.zero_grad(set_to_none=True)

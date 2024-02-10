@@ -1,11 +1,10 @@
 from pathlib import Path
 
-
 def get_config():
     return {
-        "batch_size": 8,
+        "batch_size": 64,
         "num_epochs": 20,
-        "lr": 10 ** -4,
+        "lr": 0.0002,
         "seq_len": 35,
         "d_model": 512,
         "datasource": 'dataset',
@@ -15,14 +14,14 @@ def get_config():
         "model_basename": "G2P_",
         "preload": "latest",
         "tokenizer_file": "Tokenizer\\tokenizer_{0}.json",
-        "experiment_name": "runs/G2P"
+        "experiment_name": "runs\\G2P"
     }
 
 
 def get_weights_file_path(config, epoch: str):
     model_folder = f"{config['datasource']}_{config['model_folder']}"
     model_filename = f"{config['model_basename']}{epoch}.pt"
-    return str(Path('Tokenizer') / model_folder / model_filename)
+    return str(Path(model_folder) / model_filename)
 
 
 # Find the latest weights file in the weights folder

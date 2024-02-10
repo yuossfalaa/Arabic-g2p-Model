@@ -247,7 +247,7 @@ class Transformer(nn.Module):
 
 def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int = 24, tgt_seq_len: int = 24,
                       d_model: int = 512,
-                      N: int = 4, h: int = 8, dropout: float = 0.1, d_ff: int = 2048) -> Transformer:
+                      N: int = 4, h: int = 4, dropout: float = 0.1, d_ff: int = 2048) -> Transformer:
     # Create the embedding layers
     src_embed = InputEmbeddings(d_model, src_vocab_size)
     tgt_embed = InputEmbeddings(d_model, tgt_vocab_size)

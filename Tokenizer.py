@@ -44,7 +44,7 @@ def get_or_build_tokenizer(config, dataset, type):
 
 def get_dataset(config):
     dataset_raw = load_data(DATASET_PATH)
-
+    #dataset_raw = dataset_raw[-5000:]
     tokenizer_src = get_or_build_tokenizer(config, dataset_raw, config["src"])
     tokenizer_tgt = get_or_build_tokenizer(config, dataset_raw, config["tgt"])
 
@@ -71,4 +71,3 @@ def get_dataset(config):
     val_dataloader = DataLoader(val_dataset, batch_size=1, shuffle=True)
 
     return train_dataloader, val_dataloader, tokenizer_src, tokenizer_tgt
-
