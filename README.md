@@ -1,6 +1,6 @@
 Implementing the Transformer architecture from the paper [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
 
-Using this architecture to genrate Arabic Grapheme To Phoneme Conversion based on this paper [Transformer based Grapheme-to-Phoneme Conversion](https://arxiv.org/abs/2004.06338)
+Using this architecture to generate Arabic Grapheme To Phoneme Conversion based on this paper [Transformer based Grapheme-to-Phoneme Conversion](https://arxiv.org/abs/2004.06338)
 
 it also uses a Huge search space of 890K word to search for the word before using the model to save resources
 
