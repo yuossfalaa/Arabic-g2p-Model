@@ -6,10 +6,13 @@ it also uses a Huge search space of 890K word to search for the word before usin
 
 [download weights](https://drive.google.com/file/d/19aP2ZO7QK-YfhjrotnR1Wx4ttJ_aE4g9/view?usp=drive_link) and add them to folder  **"dataset_weights"**
 
-To use:
+### To use:
+
+```python
 
 from G2P import Arabic_G2P
 
-ex: Arabic_G2P('سلام')
+Arabic_G2P('سلام')
 
-ex: Arabic_G2P('هذا النص هو مثال')
+Arabic_G2P('هذا النص هو مثال')
+```
